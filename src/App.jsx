@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components";
-import { Categories, Home } from "./pages";
+import { Categories, Home, Quiz } from "./pages";
 
 function App() {
   return (
@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
+        <Route path="/quiz/:quizId" element={<Quiz />} />
       </Routes>
     </div>
   );

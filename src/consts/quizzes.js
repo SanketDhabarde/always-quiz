@@ -6,8 +6,8 @@ export const quizzes = [
     alt: "onePiece",
     image:
       "https://media.proprofs.com/images/QM/user_images/2503852/New%20Project%20(17)(76).jpg",
-    category: "Anime",
-    title: "How well do you know One piece.",
+    category: "One Piece",
+    title: "How well do you know One piece?",
     quiz: [
       {
         _id: uuid(),

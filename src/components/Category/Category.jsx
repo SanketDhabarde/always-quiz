@@ -6,7 +6,7 @@ function Category({ quizType }) {
   const { _id, image, alt, category, quiz, title } = quizType;
   return (
     <Link to={`/quiz/${_id}`} className="btn-link">
-      <div className="card card-shadow m-1">
+      <div className="card category-card card-shadow m-1">
         <div className="card-section">
           <img
             className="card-img img-responsive category-img"
