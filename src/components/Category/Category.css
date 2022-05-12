@@ -1,0 +1,15 @@
+.category-img {
+  height: 15rem;
+}
+
+.quiz-card-footer {
+  align-items: center;
+}
+
+.card-header:hover {
+  background: transparent;
+}
+
+.card:hover {
+  opacity: 0.8;
+}

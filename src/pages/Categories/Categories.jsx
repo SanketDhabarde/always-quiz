@@ -1,0 +1,21 @@
+import React from "react";
+import "./Categories.css";
+import { quizzes } from "../../consts";
+import { Category } from "../../components";
+
+function Categories() {
+  return (
+    <div className="categories">
+      <div className="categories-header center-div py-2">
+        <h3>Choose quiz to play 🧐</h3>
+      </div>
+      <div className="categories-quiz center-div py-2">
+        {quizzes.map((quiz) => (
+          <Category key={quiz._id} quizType={quiz} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Categories;
