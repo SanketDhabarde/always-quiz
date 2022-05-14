@@ -2,6 +2,10 @@
   height: 15rem;
 }
 
+.category-card.card {
+  width: 20rem;
+}
+
 .quiz-card-footer {
   align-items: center;
 }

@@ -1,9 +1,10 @@
 import React from "react";
 import "./Rules.css";
 
-function Rules() {
+function Rules({ toggleRules }) {
   return (
-    <>
+    <div className="rules">
+      <h3 className="py-3">Read some rules before the quiz begin.🤓</h3>
       <div className="card rules-card p-2">
         <p className="rule py-1 text-m">
           <span className="rule-no">1. </span>You will have 3 questions
@@ -17,12 +18,12 @@ function Rules() {
           2 marks and each wrong option 0.
         </p>
         <div className="center-div">
-          <button className="btn btn-primary text-center">
+          <button className="btn btn-primary text-center" onClick={toggleRules}>
             Good luck 🤗 Lets begin
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

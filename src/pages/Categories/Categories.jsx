@@ -2,8 +2,10 @@ import React from "react";
 import "./Categories.css";
 import { quizzes } from "../../consts";
 import { Category } from "../../components";
+import { useTitle } from "../../hooks";
 
 function Categories() {
+  useTitle("Categories");
   return (
     <div className="categories">
       <div className="categories-header center-div py-2">

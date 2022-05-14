@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Footer } from "../../components";
+import { useTitle } from "../../hooks";
 import "./Home.css";
 
 function Home() {
+  useTitle("Home");
   return (
     <>
       <main className="landing-main grid-2-col">
