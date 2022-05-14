@@ -1,0 +1,11 @@
+.rule {
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.rules-card {
+  width: 25rem;
+}
+
+.rule-no {
+  color: var(--primary-color);
+}

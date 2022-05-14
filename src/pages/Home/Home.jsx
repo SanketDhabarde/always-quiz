@@ -15,7 +15,7 @@ function Home() {
             </p>
           </div>
           <div className="get-started pt-4">
-            <Link to="/" className="btn btn-primary btn-link">
+            <Link to="/categories" className="btn btn-primary btn-link">
               Play Now
             </Link>
           </div>
