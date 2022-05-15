@@ -36,7 +36,7 @@ export const quizzes = [
         question: "Who was the first recruit of the SH crew?",
         options: [
           { _id: uuid(), option: "Zoro", isCorrect: true },
-          { _id: uuid(), option: "Luffy", isCorrect: false },
+          { _id: uuid(), option: "Nami", isCorrect: false },
           { _id: uuid(), option: "Sanji", isCorrect: false },
           { _id: uuid(), option: "Usopp", isCorrect: false },
         ],

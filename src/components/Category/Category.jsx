@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useQuiz } from "../../context/quiz-context";
 import "./Category.css";
 
 function Category({ quizType }) {
   const { _id, image, alt, category, quiz, title } = quizType;
+  const { quizDispatch } = useQuiz();
+  const selectQuizHandler = () => {
+    quizDispatch({ type: "SET_SELECTED_QUIZ", payload: quizType });
+  };
   return (
-    <Link to={`/quiz/${_id}`} className="btn-link">
+    <Link to={`/quiz/${_id}`} className="btn-link" onClick={selectQuizHandler}>
       <div className="card category-card card-shadow m-1">
         <div className="card-section">
           <img
