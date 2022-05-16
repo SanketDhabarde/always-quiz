@@ -52,9 +52,9 @@ function Question() {
         {options.map(({ _id, option, isCorrect }) => (
           <div
             className={`option p-2 my-2 text-center border-m ${
-              selectedOption && isCorrect ? "option-true" : ""
+              selectedOption && isCorrect ? "option-correct" : ""
             }
-            ${_id === selectedOption && !isCorrect ? "option-false" : ""}
+            ${_id === selectedOption && !isCorrect ? "option-wrong" : ""}
             `}
             key={_id}
             onClick={() => answerSelectHandler(_id, isCorrect)}

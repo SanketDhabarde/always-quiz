@@ -43,10 +43,10 @@ function Result() {
                 <div
                   className={`option p-2 my-2 text-center border-m ${
                     (selectedOption && isCorrect) || isCorrect
-                      ? "option-true"
+                      ? "option-correct"
                       : ""
                   }
-            ${_id === selectedOption && !isCorrect ? "option-false" : ""}
+            ${_id === selectedOption && !isCorrect ? "option-wrong" : ""}
             `}
                   key={_id}
                 >
