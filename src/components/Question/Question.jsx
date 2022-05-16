@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useQuiz } from "../../context/quiz-context";
 import "./Question.css";
 
@@ -7,10 +8,11 @@ function Question() {
   const { currentQuestionIndex, selectedQuiz, score } = quizState;
   const { category, quiz } = selectedQuiz;
   const { question, options, selectedOption } = quiz[currentQuestionIndex];
+  const navigate = useNavigate();
 
   const changeQuestionHandler = () => {
     if (currentQuestionIndex + 1 === quiz.length) {
-      alert("result page");
+      navigate("/result");
     } else {
       quizDispatch({
         type: "SET_CURRENT_QUESTION_INDEX",

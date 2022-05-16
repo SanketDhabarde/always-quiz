@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components";
-import { Categories, Home, Quiz } from "./pages";
+import { Categories, Home, NotFound, Quiz, Result } from "./pages";
 
 function App() {
   return (
@@ -11,6 +11,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
         <Route path="/quiz/:quizId" element={<Quiz />} />
+        <Route path="/result" element={<Result />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
   );
