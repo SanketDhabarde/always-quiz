@@ -1,13 +1,22 @@
+:root {
+  --option-bg: #1c2b3f;
+  --option-correct: #007953;
+  --option-wrong: #af1616;
+  --scroll-track: #0000004d;
+  --scroll-bg: #a9a9a9;
+  --scroll-outline: #708090;
+}
+
 /* scroll */
 ::-webkit-scrollbar {
   width: 0.3em;
 }
 
 ::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px var(--scroll-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+  background-color: var(--scroll-bg);
+  outline: 1px solid var(--scroll-outline);
 }

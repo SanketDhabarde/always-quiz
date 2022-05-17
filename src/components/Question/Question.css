@@ -24,7 +24,7 @@
 .option {
   width: 100%;
   cursor: pointer;
-  background-color: #1c2b3f;
+  background-color: var(--option-bg);
 }
 
 .option:hover {
@@ -32,11 +32,11 @@
 }
 
 .option.option-correct {
-  background-color: #007953;
+  background-color: var(--option-correct);
 }
 
 .option.option-wrong {
-  background-color: #af1616;
+  background-color: var(--option-wrong);
 }
 
 .question-navigation {
