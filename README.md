@@ -9,6 +9,10 @@
 ## 📽 Preview
 
 
+https://user-images.githubusercontent.com/40385118/168847335-b9cf0cea-e742-48a6-bfd9-7897fa50dc91.mp4
+
+
+
 ## 📑 About
 > Always-quiz is the quiz app with the different categories
 ## 🛠 Technologies used
