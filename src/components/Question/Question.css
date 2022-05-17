@@ -31,11 +31,11 @@
   background-color: var(--secondary-color);
 }
 
-.option.option-true {
+.option.option-correct {
   background-color: #007953;
 }
 
-.option.option-false {
+.option.option-wrong {
   background-color: #af1616;
 }
 
@@ -45,4 +45,10 @@
   align-items: center;
   gap: 0.5em;
   cursor: pointer;
+}
+
+@media screen and (max-width: 37.5em) {
+  .card{
+    width: auto;
+  }
 }

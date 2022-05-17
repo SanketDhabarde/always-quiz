@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useQuiz } from "../../context/quiz-context";
 import "./Question.css";
 
@@ -7,10 +8,11 @@ function Question() {
   const { currentQuestionIndex, selectedQuiz, score } = quizState;
   const { category, quiz } = selectedQuiz;
   const { question, options, selectedOption } = quiz[currentQuestionIndex];
+  const navigate = useNavigate();
 
   const changeQuestionHandler = () => {
     if (currentQuestionIndex + 1 === quiz.length) {
-      alert("result page");
+      navigate("/result");
     } else {
       quizDispatch({
         type: "SET_CURRENT_QUESTION_INDEX",
@@ -50,9 +52,9 @@ function Question() {
         {options.map(({ _id, option, isCorrect }) => (
           <div
             className={`option p-2 my-2 text-center border-m ${
-              selectedOption && isCorrect ? "option-true" : ""
+              selectedOption && isCorrect ? "option-correct" : ""
             }
-            ${_id === selectedOption && !isCorrect ? "option-false" : ""}
+            ${_id === selectedOption && !isCorrect ? "option-wrong" : ""}
             `}
             key={_id}
             onClick={() => answerSelectHandler(_id, isCorrect)}
