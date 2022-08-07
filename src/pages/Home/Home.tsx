@@ -4,7 +4,7 @@ import { Footer } from "../../components";
 import { useTitle } from "../../hooks";
 import "./Home.css";
 
-function Home() {
+function Home(): JSX.Element {
   useTitle("Home");
   return (
     <>

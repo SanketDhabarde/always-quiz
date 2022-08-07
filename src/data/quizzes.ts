@@ -1,6 +1,7 @@
 import { v4 as uuid } from "uuid";
+import { Quizz } from "./quizzes.types";
 
-export const quizzes = [
+export const quizzes: Quizz[] = [
   {
     _id: uuid(),
     alt: "onePiece",
@@ -19,6 +20,7 @@ export const quizzes = [
           { _id: uuid(), option: "Sanji", isCorrect: false },
           { _id: uuid(), option: "Usopp", isCorrect: false },
         ],
+        selectedOption: "",
       },
       {
         _id: uuid(),
@@ -30,6 +32,7 @@ export const quizzes = [
           { _id: uuid(), option: "10", isCorrect: true },
           { _id: uuid(), option: "15", isCorrect: false },
         ],
+        selectedOption: "",
       },
       {
         _id: uuid(),
@@ -40,6 +43,7 @@ export const quizzes = [
           { _id: uuid(), option: "Sanji", isCorrect: false },
           { _id: uuid(), option: "Usopp", isCorrect: false },
         ],
+        selectedOption: "",
       },
     ],
   },
@@ -76,6 +80,7 @@ export const quizzes = [
             isCorrect: true,
           },
         ],
+        selectedOption: "",
       },
       {
         _id: uuid(),
@@ -87,6 +92,7 @@ export const quizzes = [
           { _id: uuid(), option: "Sirius", isCorrect: false },
           { _id: uuid(), option: "George", isCorrect: false },
         ],
+        selectedOption: "",
       },
       {
         _id: uuid(),
@@ -98,6 +104,7 @@ export const quizzes = [
           { _id: uuid(), option: "Fluffy", isCorrect: true },
           { _id: uuid(), option: "Bruce", isCorrect: false },
         ],
+        selectedOption: "",
       },
     ],
   },
@@ -130,6 +137,7 @@ export const quizzes = [
             isCorrect: true,
           },
         ],
+        selectedOption: "",
       },
       {
         _id: uuid(),
@@ -152,6 +160,7 @@ export const quizzes = [
             isCorrect: false,
           },
         ],
+        selectedOption: "",
       },
       {
         _id: uuid(),
@@ -162,6 +171,7 @@ export const quizzes = [
           { _id: uuid(), option: "Hulk", isCorrect: false },
           { _id: uuid(), option: "Spiderman", isCorrect: false },
         ],
+        selectedOption: "",
       },
     ],
   },

@@ -1,10 +1,10 @@
 import React from "react";
 import "./Categories.css";
-import { quizzes } from "../../consts";
+import { quizzes } from "../../data";
 import { Category } from "../../components";
 import { useTitle } from "../../hooks";
 
-function Categories() {
+function Categories(): JSX.Element {
   useTitle("Categories");
   return (
     <div className="categories">

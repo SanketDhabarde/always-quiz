@@ -3,16 +3,13 @@ import { Question, Rules } from "../../components";
 import { useTitle, useToggle } from "../../hooks";
 import "./Quiz.css";
 
-function Quiz() {
+function Quiz(): JSX.Element {
   const [isRulesVisible, toggleRules] = useToggle();
   useTitle("Questions");
+
   return (
     <div className="quiz center-div">
-      {isRulesVisible ? (
-        <Question />
-      ) : (
-        <Rules toggleRules={toggleRules} />
-      )}
+      {isRulesVisible ? <Question /> : <Rules toggleHandler={toggleRules} />}
     </div>
   );
 }

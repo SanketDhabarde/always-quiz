@@ -1,9 +1,10 @@
+import React from 'react';
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components";
 import { Categories, Home, NotFound, Quiz, Result } from "./pages";
 
-function App() {
+function App() : JSX.Element {
   return (
     <div className="App">
       <Navbar />

@@ -4,7 +4,7 @@ import { useQuiz } from "../../context/quiz-context";
 import { useTitle } from "../../hooks";
 import "./Result.css";
 
-function Result() {
+function Result(): JSX.Element {
   useTitle("Result");
   const { quizState } = useQuiz();
   const { selectedQuiz, score } = quizState;
