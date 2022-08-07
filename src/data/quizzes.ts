@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
-import { Quizzes } from "./quizzes.types";
+import { Quizz } from "./quizzes.types";
 
-export const quizzes: Quizzes[] = [
+export const quizzes: Quizz[] = [
   {
     _id: uuid(),
     alt: "onePiece",

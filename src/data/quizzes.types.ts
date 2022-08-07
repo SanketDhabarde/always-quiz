@@ -10,7 +10,7 @@ type Quiz = {
   options: Option[];
 };
 
-export type Quizzes = {
+export type Quizz = {
   _id: string;
   alt: string;
   image: string;
