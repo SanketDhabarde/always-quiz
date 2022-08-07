@@ -1,13 +1,14 @@
-type Option = {
+export type Option = {
   _id: string;
   option: string;
   isCorrect: boolean;
 };
 
-type Quiz = {
+export type Quiz = {
   _id: string;
   question: string;
   options: Option[];
+  selectedOption: string;
 };
 
 export type Quizz = {

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useQuiz } from "../../context/quiz-context";
 import "./Question.css";
 
-function Question() {
+function Question(): JSX.Element {
   const { quizState, quizDispatch } = useQuiz();
   const { currentQuestionIndex, selectedQuiz, score } = quizState;
   const { category, quiz } = selectedQuiz;
@@ -21,7 +21,7 @@ function Question() {
     }
   };
 
-  const answerSelectHandler = (_id, isCorrect) => {
+  const answerSelectHandler = (_id: string, isCorrect: boolean) => {
     if (!selectedOption) {
       quizDispatch({
         type: "SET_SELECTED_OPTION",

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./NotFound.css";
 
-function NotFound() {
+function NotFound(): JSX.Element {
   return (
     <div className="px-1">
       <main className="center-div">

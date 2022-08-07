@@ -1,10 +1,31 @@
+import React from "react";
 import { createContext, useContext, useReducer } from "react";
+import {
+  QuizAction,
+  QuizContext,
+  QuizInitialState,
+} from "./quiz-context.types";
 
-const QuizContext = createContext();
+const quizContext = createContext({} as QuizContext);
 
-const useQuiz = () => useContext(QuizContext);
+const { Provider } = quizContext;
 
-const quizReducer = (state, { type, payload }) => {
+const useQuiz = () => useContext(quizContext);
+
+const initialState: QuizInitialState = {
+  currentQuestionIndex: 0,
+  selectedQuiz: {
+    _id: "",
+    alt: "",
+    image: "",
+    category: "",
+    title: "",
+    quiz: [],
+  },
+  score: 0,
+};
+
+const quizReducer = (state = initialState, { type, payload }: QuizAction) => {
   switch (type) {
     case "SET_CURRENT_QUESTION_INDEX":
       return {
@@ -16,7 +37,7 @@ const quizReducer = (state, { type, payload }) => {
         ...state,
         selectedQuiz: { ...payload },
         currentQuestionIndex: 0,
-        score: 0
+        score: 0,
       };
     case "SET_SELECTED_OPTION":
       return {
@@ -36,17 +57,12 @@ const quizReducer = (state, { type, payload }) => {
   }
 };
 
-const QuizProvider = ({ children }) => {
-  const [quizState, quizDispatch] = useReducer(quizReducer, {
-    currentQuestionIndex: 0,
-    selectedQuiz: {},
-    score: 0,
-  });
-  return (
-    <QuizContext.Provider value={{ quizState, quizDispatch }}>
-      {children}
-    </QuizContext.Provider>
-  );
+const QuizProvider = ({ children }: any) => {
+  const [quizState, quizDispatch] = useReducer(quizReducer, initialState);
+
+  const value = { quizState, quizDispatch };
+
+  return <Provider value={value}>{children}</Provider>;
 };
 
 export { useQuiz, QuizProvider };
