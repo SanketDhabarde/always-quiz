@@ -1,6 +1,6 @@
 import React from "react";
 import "./Categories.css";
-import { quizzes } from "../../consts";
+import { quizzes } from "../../data";
 import { Category } from "../../components";
 import { useTitle } from "../../hooks";
 
