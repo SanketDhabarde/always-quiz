@@ -17,4 +17,4 @@ const QuizProvider = ({ children }: any) => {
   return <Provider value={value}>{children}</Provider>;
 };
 
-export { useQuiz, QuizProvider };
+export { useQuiz, QuizProvider, quizContext };

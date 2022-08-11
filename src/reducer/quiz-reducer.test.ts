@@ -137,4 +137,27 @@ describe("Testing quiz reducer", () => {
 
     expect(state).toEqual(expectedState);
   });
+
+  it("should have same state in default case", () => {
+    const initialState = {
+      currentQuestionIndex: 0,
+      selectedQuiz: {
+        _id: "1234567",
+        category: "xyz",
+        alt: "",
+        image: "",
+        title: "",
+        quiz: [
+          { _id: "1234", question: "", options: [], selectedOption: "456" },
+          { _id: "4567", question: "", options: [], selectedOption: "" },
+          { _id: "890", question: "", options: [], selectedOption: "" },
+        ],
+      },
+      score: 0,
+    };
+
+    const state = quizReducer(initialState, { type: "DEFAULT" });
+
+    expect(state).toEqual(initialState);
+  });
 });

@@ -13,20 +13,17 @@ export const initialState: QuizInitialState = {
   score: 0,
 };
 
-export const quizReducer = (
-  state = initialState,
-  { type, payload }: QuizAction
-) => {
-  switch (type) {
+export const quizReducer = (state = initialState, action: QuizAction) => {
+  switch (action.type) {
     case "SET_CURRENT_QUESTION_INDEX":
       return {
         ...state,
-        currentQuestionIndex: payload,
+        currentQuestionIndex: action.payload,
       };
     case "SET_SELECTED_QUIZ":
       return {
         ...state,
-        selectedQuiz: { ...payload },
+        selectedQuiz: { ...action.payload },
         currentQuestionIndex: 0,
         score: 0,
       };
@@ -36,12 +33,12 @@ export const quizReducer = (
         selectedQuiz: {
           ...state.selectedQuiz,
           quiz: state.selectedQuiz.quiz.map((eachQuiz) =>
-            eachQuiz._id === payload.quizId
-              ? { ...eachQuiz, selectedOption: payload.selectedOption }
+            eachQuiz._id === action.payload.quizId
+              ? { ...eachQuiz, selectedOption: action.payload.selectedOption }
               : eachQuiz
           ),
         },
-        score: state.score + payload.score,
+        score: state.score + action.payload.score,
       };
     default:
       return state;
