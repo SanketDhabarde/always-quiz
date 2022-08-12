@@ -1,7 +1,10 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import Category from "./Category";
+import { quizContext } from "../../context";
 import { CategoryProp } from "./Category.types";
+import { initialState } from "../../reducer";
 
 const mockQuizType = {
   _id: "1234",
@@ -12,10 +15,16 @@ const mockQuizType = {
   title: "",
 };
 
+const mockDispatch = jest.fn();
+
 const MockCategory = ({ quizType }: CategoryProp) => {
   return (
     <BrowserRouter>
-      <Category quizType={quizType} />
+      <quizContext.Provider
+        value={{ quizState: initialState, quizDispatch: mockDispatch }}
+      >
+        <Category quizType={quizType} />
+      </quizContext.Provider>
     </BrowserRouter>
   );
 };
@@ -35,5 +44,15 @@ describe("Category", () => {
     const headingElement = screen.getByRole("heading");
 
     expect(headingElement.textContent).toBe("test_category");
+  });
+
+  it("should go to question page when click on quiz", async () => {
+    render(<MockCategory quizType={mockQuizType} />);
+
+    const imgElement = screen.getByRole("img");
+
+    await userEvent.click(imgElement);
+
+    expect(window.location.pathname).toBe("/quiz/1234");
   });
 });

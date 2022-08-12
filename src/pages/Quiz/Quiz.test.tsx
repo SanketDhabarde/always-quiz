@@ -3,8 +3,6 @@ import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import Quiz from "./Quiz";
 
-const mockToggleHandler = jest.fn();
-
 describe("Quiz", () => {
   it("should render Rules first before starting quiz", () => {
     render(<Quiz />, { wrapper: BrowserRouter });

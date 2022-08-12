@@ -18,13 +18,12 @@ export const initialState = {
     quiz: [
       {
         _id: "1",
-        question:
-          "Who promised that they would never lose another fight until they defeated a certain someone?",
+        question: "test question 1",
         options: [
-          { _id: "12", option: "Zoro", isCorrect: true },
-          { _id: "13", option: "Luffy", isCorrect: false },
-          { _id: "14", option: "Sanji", isCorrect: false },
-          { _id: "15", option: "Usopp", isCorrect: false },
+          { _id: "12", option: "option 1", isCorrect: true },
+          { _id: "13", option: "option 2", isCorrect: false },
+          { _id: "14", option: "option 3", isCorrect: false },
+          { _id: "15", option: "option 4", isCorrect: false },
         ],
         selectedOption: "13",
       },
@@ -73,5 +72,25 @@ describe("Result", () => {
     const questionElements = screen.getAllByTestId("question-element");
 
     expect(questionElements.length).toBe(2);
+  });
+
+  it("should click on Category to redirect to category page", async () => {
+    render(<MockResult />);
+
+    const navigateElement = screen.getByText("Category");
+
+    await userEvent.click(navigateElement);
+
+    expect(window.location.pathname).toBe("/categories");
+  });
+
+  it("should click on Home to redirect to home page", async () => {
+    render(<MockResult />);
+
+    const navigateElement = screen.getByText("Home");
+
+    await userEvent.click(navigateElement);
+
+    expect(window.location.pathname).toBe("/");
   });
 });

@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { BrowserRouter } from "react-router-dom";
 import { quizContext } from "../../context";
 import Question from "./Question";
@@ -6,7 +7,7 @@ import Question from "./Question";
 const mockDispatch = jest.fn();
 
 export const initialState = {
-  currentQuestionIndex: 0,
+  currentQuestionIndex: 1,
   selectedQuiz: {
     _id: "1234",
     alt: "onePiece",
@@ -25,7 +26,7 @@ export const initialState = {
           { _id: "14", option: "Sanji", isCorrect: false },
           { _id: "15", option: "Usopp", isCorrect: false },
         ],
-        selectedOption: "13",
+        selectedOption: "",
       },
       {
         _id: "2",
@@ -36,7 +37,7 @@ export const initialState = {
           { _id: "14", option: "Sanji", isCorrect: false },
           { _id: "15", option: "Usopp", isCorrect: false },
         ],
-        selectedOption: "",
+        selectedOption: "13",
       },
     ],
   },
@@ -64,7 +65,7 @@ describe("Question", () => {
     expect(headingElement).toBeInTheDocument();
   });
 
-  it("should add option-correct class to correct option if the selectedOption is selected", () => {
+  it("should add option-correct class to correct option if the selectedOption is right/wrong", () => {
     render(<MockQuestion />);
 
     const optionElement = screen.getByText("Zoro");
@@ -72,11 +73,23 @@ describe("Question", () => {
     expect(optionElement).toHaveClass("option-correct");
   });
 
-  it("should add option-wrong class to wrong option if the selectedOption is selected", () => {
+  it("should add option-wrong class to wrong option if the selectedOption is wrong", async () => {
     render(<MockQuestion />);
 
     const optionElement = screen.getByText("Luffy");
 
+    await userEvent.click(optionElement);
+
     expect(optionElement).toHaveClass("option-wrong");
+  });
+
+  it("should go to Result page if the current question is last", async () => {
+    render(<MockQuestion />);
+
+    const questionNavigatorElement = screen.getByText("Result");
+
+    await userEvent.click(questionNavigatorElement);
+
+    expect(window.location.pathname).toBe("/result");
   });
 });
