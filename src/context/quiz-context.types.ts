@@ -22,6 +22,9 @@ export type QuizAction =
         selectedOption: string;
         score: number;
       };
+    }
+  | {
+      type: "DEFAULT";
     };
 
 export type QuizDispatch = (action: QuizAction) => void;

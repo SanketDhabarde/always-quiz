@@ -1,13 +1,16 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useQuiz } from "../../context/quiz-context";
+import { initialState } from "../../reducer";
 import "./Question.css";
 
 function Question(): JSX.Element {
   const { quizState, quizDispatch } = useQuiz();
-  const { currentQuestionIndex, selectedQuiz, score } = quizState;
-  const { category, quiz } = selectedQuiz;
-  const { question, options, selectedOption } = quiz[currentQuestionIndex];
+  const { currentQuestionIndex, selectedQuiz, score } =
+    quizState ?? initialState;
+  const { category, quiz } = selectedQuiz ?? {};
+  const { question, options, selectedOption } =
+    quiz[currentQuestionIndex] ?? {};
   const navigate = useNavigate();
 
   const changeQuestionHandler = () => {
@@ -49,7 +52,7 @@ function Question(): JSX.Element {
         <p>{question}</p>
       </div>
       <div className="question-options py-1">
-        {options.map(({ _id, option, isCorrect }) => (
+        {options?.map(({ _id, option, isCorrect }) => (
           <div
             className={`option p-2 my-2 text-center border-m ${
               selectedOption && isCorrect ? "option-correct" : ""

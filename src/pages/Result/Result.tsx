@@ -31,7 +31,11 @@ function Result(): JSX.Element {
       </div>
       <div className="quiz">
         {quiz.map(({ _id, question, options, selectedOption }) => (
-          <div className="card question-card question" key={_id}>
+          <div
+            className="card question-card question"
+            key={_id}
+            data-testid="question-element"
+          >
             <div className="question-single-que py-1 text-center">
               <p>{question}</p>
             </div>
