@@ -19,6 +19,9 @@ https://user-images.githubusercontent.com/40385118/168847335-b9cf0cea-e742-48a6-
 - ReactJS
 - [Always-UI](https://always-ui.netlify.app/) component library
 - React Router
+- TypeScript
+- Jest
+- React testing library
 
 ## ⏯ Live link
 [Always-quiz](https://always-quiz.netlify.app/)
